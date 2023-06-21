@@ -1,0 +1,82 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package vector;
+
+/**
+ *
+ * @author ASUS
+ */
+public class Student {
+    
+    String firstName,nikeName;
+    int std_number;
+
+    public Student(int std_number,String firstName, String nikeName) {
+        this.firstName = firstName;
+        this.nikeName = nikeName;
+        this.std_number = std_number;
+    }
+
+  
+    
+    
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getNikeName() {
+        return nikeName;
+    }
+
+    public void setNikeName(String nikeName) {
+        this.nikeName = nikeName;
+    }
+
+    public int getStd_number() {
+        return std_number;
+    }
+
+    public void setStd_number(int std_number) {
+        this.std_number = std_number;
+    }
+ 
+        
+    @Override
+    public String toString() {
+       return    std_number + "                          "+ firstName + "                          "+ nikeName.toUpperCase();
+     
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 67 * hash + this.std_number;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Student other = (Student) obj;
+        if (this.std_number != other.std_number) {
+            return false;
+        }
+        return true;
+    }
+}
